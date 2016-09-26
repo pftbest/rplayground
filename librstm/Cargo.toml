@@ -1,0 +1,8 @@
+[package]
+name = "rstm"
+version = "0.0.0"
+authors = ["Vadzim Dambrouski <pftbest@gmail.com>"]
+
+[lib]
+name = "rstm"
+crate-type = ["rlib"]

@@ -1,0 +1,18 @@
+[package]
+name = "zpm"
+version = "0.0.0"
+license = "MIT"
+authors = ["Vadzim Dambrouski <pftbest@gmail.com>"]
+
+[dependencies]
+rstm = { path = "librstm" }
+bitflags = "*"
+
+[profile.dev]
+panic = "abort"
+debug = true
+
+[profile.release]
+panic = "abort"
+debug = true
+lto = true
