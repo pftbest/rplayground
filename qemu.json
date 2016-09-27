@@ -14,11 +14,6 @@
     "no-compiler-rt": true,
     "linker": "arm-none-eabi-gcc",
     "pre-link-args": [
-        "-g",
-        "-mthumb",
-        "-march=armv7-m",
-        "-mcpu=cortex-m3",
-        "-mfloat-abi=soft",
         "-Tld/qemu.ld",
         "-nostdlib"
     ],
