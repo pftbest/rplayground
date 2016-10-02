@@ -6,3 +6,6 @@ authors = ["Vadzim Dambrouski <pftbest@gmail.com>"]
 [lib]
 name = "rstm"
 crate-type = ["rlib"]
+
+#[dependencies]
+#rustc_builtins = { git = "https://github.com/japaric/rustc-builtins" }

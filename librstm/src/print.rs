@@ -3,7 +3,7 @@ use stdio::StdOut;
 use rdi;
 
 pub fn _print(args: fmt::Arguments) {
-    let mut out = StdOut::new();
+    let mut out = StdOut::get();
     fmt::write(&mut out, args).expect("Error writing to StdOut");
 }
 

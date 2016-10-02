@@ -51,6 +51,7 @@ pub fn swi_open(name: &str, mode: FileMode) -> u32 {
     return angel_swi(SwiReason::Open, arg.as_ptr());
 }
 
+#[allow(dead_code)]
 pub fn swi_close(fd: u32) -> u32 {
     return angel_swi(SwiReason::Close, &fd);
 }
