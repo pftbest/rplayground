@@ -3,6 +3,8 @@
 #![feature(lang_items)]
 #![feature(const_fn)]
 
+extern crate compiler_builtins_snapshot;
+
 pub mod vectors;
 pub mod startup;
 pub mod print;

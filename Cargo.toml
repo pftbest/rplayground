@@ -6,7 +6,6 @@ authors = ["Vadzim Dambrouski <pftbest@gmail.com>"]
 
 [dependencies]
 rstm = { path = "librstm" }
-bitflags = "*"
 
 [profile.dev]
 panic = "abort"

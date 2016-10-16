@@ -5,7 +5,8 @@ monitor reset halt
 monitor arm semihosting enable
 load
 monitor reset halt
-layout asm
+#layout asm
+layout src
 
 define hook-quit
     set confirm off
