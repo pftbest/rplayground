@@ -20,7 +20,7 @@ unsafe fn init_data() {
     let src = &__data_load as *const u32;
     let dst = &mut __data_start as *mut u32;
     let end = &__data_end as *const u32;
-    let count = (dst as usize) - (end as usize);
+    let count = (end as usize) - (dst as usize);
     ptr::copy_nonoverlapping(src, dst, count);
 }
 
@@ -31,6 +31,6 @@ unsafe fn init_bss() {
     }
     let dst = &mut __bss_start as *mut u32;
     let end = &__bss_end as *const u32;
-    let count = (dst as usize) - (end as usize);
+    let count = (end as usize) - (dst as usize);
     ptr::write_bytes(dst, 0, count);
 }

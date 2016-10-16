@@ -13,5 +13,8 @@ clean:
 	cargo clean
 
 run:
+	qemu-system-arm -machine lm3s6965evb -nographic -monitor null -serial null -semihosting -kernel $(BINARY)
+
+debug:
 	qemu-system-arm -machine lm3s6965evb -gdb tcp::3333 -S -nographic -monitor null -serial null -semihosting -kernel $(BINARY) &
 	arm-none-eabi-gdb $(BINARY)
