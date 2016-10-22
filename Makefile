@@ -1,10 +1,12 @@
 TARGET = qemu
 #TARGET = stm32f429zi
 
-BINARY = target/$(TARGET)/debug/zpm
+#BINARY = target/$(TARGET)/debug/zpm
+BINARY = target/$(TARGET)/release/zpm
 
 all:
-	xargo build --target=$(TARGET) --verbose
+#	xargo build --target=$(TARGET) --verbose
+	xargo build --target=$(TARGET) --verbose --release
 	arm-none-eabi-readelf -a $(BINARY) > target/readelf.txt
 	arm-none-eabi-objdump -Cd $(BINARY) > target/objdump.txt
 	arm-none-eabi-size $(BINARY)
