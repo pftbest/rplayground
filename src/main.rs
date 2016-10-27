@@ -5,7 +5,7 @@
 extern crate rstm;
 
 #[no_mangle]
-pub extern fn main() -> ! {
+pub extern "C" fn main() -> ! {
     loop {
         let y = 0.1 + 0.2;
         println!("The value is {}", y);

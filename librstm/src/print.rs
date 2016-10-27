@@ -19,7 +19,7 @@ macro_rules! println {
 }
 
 #[lang = "panic_fmt"]
-pub extern fn panic_fmt(fmt: fmt::Arguments, file: &'static str, line: u32) -> ! {
+pub extern "C" fn panic_fmt(fmt: fmt::Arguments, file: &'static str, line: u32) -> ! {
     _print(fmt);
     println!("\nfile: {}; line: {}", file, line);
     rdi::swi_exit(0);

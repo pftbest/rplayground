@@ -1,9 +1,9 @@
 #[no_mangle]
-pub extern fn default_handler() {
+pub extern "C" fn default_handler() {
     loop {}
 }
 
-extern {
+extern "C" {
     fn __stack_top();
     fn reset_handler();
     fn nmi_handler();
@@ -109,7 +109,7 @@ extern {
 
 #[no_mangle]
 #[link_section = ".vectors"]
-pub static VECTOR_TABLE: [Option<unsafe extern fn()>; 107] =
+pub static VECTOR_TABLE: [Option<unsafe extern "C" fn()>; 107] =
     [Some(__stack_top),
      Some(reset_handler),
      Some(nmi_handler),

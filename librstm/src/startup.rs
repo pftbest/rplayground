@@ -1,18 +1,18 @@
 use core::ptr;
 
 #[no_mangle]
-pub unsafe extern fn reset_handler() {
+pub unsafe extern "C" fn reset_handler() {
     init_data();
     init_bss();
 
-    extern {
+    extern "C" {
         fn main() -> !;
     }
     main();
 }
 
 unsafe fn init_data() {
-    extern {
+    extern "C" {
         static __data_load: u8;
         static mut __data_start: u8;
         static __data_end: u8;
@@ -25,7 +25,7 @@ unsafe fn init_data() {
 }
 
 unsafe fn init_bss() {
-    extern {
+    extern "C" {
         static mut __bss_start: u8;
         static __bss_end: u8;
     }
