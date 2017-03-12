@@ -1,15 +1,10 @@
 use core::fmt;
-use stdio::StdOut;
-use rdi;
 
-pub fn _print(args: fmt::Arguments) {
-    let mut out = StdOut::get();
-    fmt::write(&mut out, args).expect("Error writing to StdOut");
-}
+pub use cortex_m_semihosting::io::write_fmt as write_fmt;
 
 #[macro_export]
 macro_rules! print {
-    ($($arg:tt)*) => ($crate::print::_print(format_args!($($arg)*)));
+    ($($arg:tt)*) => ($crate::print::write_fmt(format_args!($($arg)*)));
 }
 
 #[macro_export]
@@ -20,8 +15,7 @@ macro_rules! println {
 
 #[lang = "panic_fmt"]
 pub extern "C" fn panic_fmt(fmt: fmt::Arguments, file: &'static str, line: u32) -> ! {
-    _print(fmt);
-    println!("\nfile: {}; line: {}", file, line);
-    rdi::swi_exit(0);
+    write_fmt(fmt);
+    hprintln!("\nfile: {}; line: {}", file, line);
     loop {}
 }
