@@ -7,5 +7,9 @@ authors = ["Vadzim Dambrouski <pftbest@gmail.com>"]
 name = "rstm"
 crate-type = ["rlib"]
 
+[dependencies.compiler_builtins]
+git = "https://github.com/rust-lang-nursery/compiler-builtins"
+features = ["mem"]
+
 [dependencies]
-compiler-builtins-snapshot = "*"
+cortex-m-semihosting = "*"

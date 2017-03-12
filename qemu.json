@@ -20,6 +20,5 @@
         "-mfloat-abi=soft"
     ],
     "post-link-args": [
-        "-lg"
     ]
 }
