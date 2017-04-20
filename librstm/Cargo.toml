@@ -12,4 +12,4 @@ git = "https://github.com/rust-lang-nursery/compiler-builtins"
 features = ["mem"]
 
 [dependencies]
-cortex-m-semihosting = "*"
+cortex-m-semihosting = { git = "https://github.com/japaric/cortex-m-semihosting" }

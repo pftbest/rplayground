@@ -1,6 +1,7 @@
 use core::fmt;
 
 pub use cortex_m_semihosting::io::write_fmt as write_fmt;
+use cortex_m_semihosting::debug;
 
 #[macro_export]
 macro_rules! print {
@@ -17,5 +18,6 @@ macro_rules! println {
 pub extern "C" fn panic_fmt(fmt: fmt::Arguments, file: &'static str, line: u32) -> ! {
     write_fmt(fmt);
     hprintln!("\nfile: {}; line: {}", file, line);
+    debug::exit(Err(()));
     loop {}
 }

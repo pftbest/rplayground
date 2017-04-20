@@ -13,13 +13,14 @@
     "target-pointer-width": "32",
     "no-compiler-rt": true,
     "linker": "arm-none-eabi-gcc",
-    "pre-link-args": [
-        "-Tld/stm32f429zi.ld",
-        "-mthumb",
-        "-mcpu=cortex-m4",
-        "-mfpu=fpv4-sp-d16",
-        "-mfloat-abi=hard"
-    ],
-    "post-link-args": [
-    ]
+    "linker-flavor": "gcc",
+    "pre-link-args": {
+	    "gcc": [
+            "-Tld/stm32f429zi.ld",
+            "-mthumb",
+            "-mcpu=cortex-m4",
+            "-mfpu=fpv4-sp-d16",
+            "-mfloat-abi=hard"
+        ]
+    }
 }

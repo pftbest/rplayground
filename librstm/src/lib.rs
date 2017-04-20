@@ -11,3 +11,5 @@ extern crate cortex_m_semihosting;
 pub mod vectors;
 pub mod startup;
 pub mod print;
+
+pub use cortex_m_semihosting::debug::exit;

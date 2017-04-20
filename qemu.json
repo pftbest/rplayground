@@ -13,12 +13,13 @@
     "target-pointer-width": "32",
     "no-compiler-rt": true,
     "linker": "arm-none-eabi-gcc",
-    "pre-link-args": [
-        "-Tld/qemu.ld",
-        "-mthumb",
-        "-mcpu=cortex-m3",
-        "-mfloat-abi=soft"
-    ],
-    "post-link-args": [
-    ]
+    "linker-flavor": "gcc",
+    "pre-link-args": {
+	    "gcc": [
+            "-Tld/qemu.ld",
+            "-mthumb",
+            "-mcpu=cortex-m3",
+            "-mfloat-abi=soft"
+        ]
+    }
 }
